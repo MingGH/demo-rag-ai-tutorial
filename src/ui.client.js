@@ -57,7 +57,7 @@ async function ask() {
     const res = await fetch('/?text=' + encodeURIComponent(q || ''));
     const txt = await res.text();
     const model = res.headers.get('x-model-used') || '';
-    answerEl.textContent = txt + (model ? '\n\n模型: ' + model : '');
+    answerEl.textContent = txt + (model ? '模型: ' + model : '');
   } catch (e) {
     answerEl.textContent = '请求失败';
   }
