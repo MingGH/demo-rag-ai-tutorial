@@ -1,0 +1,37 @@
+name = "demo-rag-ai-tutorial"
+compatibility_date = "2025-11-15"
+main = "src/index.js"
+
+[ai]
+binding = "AI"
+
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "demo-rag-index"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "demo-rag-db"
+database_id = "改为你的数据库id"
+
+
+[[workflows]]
+name = "demo-rag"
+binding = "DEMO_RAG_WORKFLOW"
+class_name = "RAGWorkflow"
+
+
+[observability]
+enabled = false
+head_sampling_rate = 1
+
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+persist = true
+invocation_logs = true
+
+[observability.traces]
+enabled = false
+persist = true
+head_sampling_rate = 1
