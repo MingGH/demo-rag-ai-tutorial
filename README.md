@@ -64,6 +64,12 @@ curl "http://localhost:8787/?text=什么是Python"
 curl http://localhost:8787/
 ```
 
+### 获取笔记列表
+
+```bash
+curl http://localhost:8787/notes
+```
+
 ### 删除笔记
 
 ```bash
@@ -105,3 +111,18 @@ npx wrangler deploy
 yarn dev
 
 ```
+
+## 前端界面
+
+- 访问 `http://localhost:8787/ui`
+- 功能：
+  - 提交笔记到后端接口 `POST /notes`
+  - 查看并删除当前已保存的笔记 `GET /notes`、`DELETE /notes/:id`
+  - 向 AI 提问，底层调用 `GET /?text=...`
+  
+### 使用方法
+
+1. 启动本地服务后打开浏览器访问 `http://localhost:8787/ui`
+2. 在“添加笔记”中输入内容并点击“提交”
+3. 在“已保存笔记”中查看列表并可删除无用笔记
+4. 在“向 AI 提问”输入问题并查看模型回答

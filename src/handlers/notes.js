@@ -7,6 +7,11 @@ export async function createNote(c) {
 	return c.text("已创建笔记", 201);
 }
 
+export async function listNotes(c) {
+	const { results } = await c.env.DB.prepare("SELECT id, text FROM notes ORDER BY id DESC").run();
+	return c.json(results || []);
+}
+
 // 🗑️ 删除笔记及对应向量
 export async function deleteNote(c) {
 	const { id } = c.req.param();
