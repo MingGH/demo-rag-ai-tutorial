@@ -9,7 +9,9 @@ export function renderUI() {
     :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; --danger:#ef4444; }
     * { box-sizing: border-box; }
     body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: var(--text); }
-    header { padding: 24px; text-align: center; font-weight: 700; font-size: 20px; background: linear-gradient(90deg,#22c55e33,#22c55e11); }
+    header { padding: 24px; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 20px; background: linear-gradient(90deg,#22c55e33,#22c55e11); }
+    header a { color: var(--text); text-decoration: none; font-weight: 600; }
+    header a:hover { color: var(--accent); }
     .container { max-width: 960px; margin: 0 auto; padding: 24px; display: grid; gap: 24px; }
     .card { background: var(--card); border: 1px solid #1f2937; border-radius: 12px; padding: 16px; }
     .card h2 { margin: 0 0 12px; font-size: 18px; }
@@ -28,7 +30,7 @@ export function renderUI() {
   </style>
 </head>
 <body>
-  <header>RAG 个人知识库</header>
+  <header><span>RAG 个人知识库</span><a href="https://runnable.run/blog" target="_blank" rel="noopener noreferrer">Asher的博客</a></header>
   <div class="container">
     <div class="card">
       <h2>添加笔记</h2>
